@@ -1,1 +1,3 @@
 # OpenGaurd
+## Links
+- [Wiki](/wiki)
