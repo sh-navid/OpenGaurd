@@ -1,51 +1,66 @@
 import sys
 from src.file import File
-from src.comment import Comment
-from src.cleaner import Cleaner
-from src.variable import Variable
+from src.comment import KotlinComment,PythonComment
+from src.cleaner import KotlinCleaner,PythonCleaner
+from src.variable import KotlinVariable,PythonVariable
 from src.security import Security
 
 # ----------------------------------------------------------------------------
 
 root=sys.path[0]
-test_in=root+"/sample/kotlin/Test1.kt"
-test_out=root+"/build/kotlin/Test1.kt"
 
-# ----------------------------------------------------------------------------
-
-content=File.read(test_in)
-
-# ----------------------------------------------------------------------------
-
-actions=[
-    Comment.remove_linear,
-    Comment.remove_multiline,
-    Cleaner.remove_emptylines,
+services=[
+    {"ext":".kt", "lang":"kotlin", "engine":KotlinVariable, "actions":[
+        KotlinComment.remove_linear,
+        KotlinComment.remove_multiline,
+        KotlinCleaner.remove_emptylines,
+    ]},
+    {"ext":".py", "lang":"python", "engine":PythonVariable, "actions":[
+        PythonComment.remove_linear,
+        PythonComment.remove_multiline,
+        PythonCleaner.remove_emptylines,
+    ]},
 ]
-for action in actions:
-    content=action(content)
 
-# ----------------------------------------------------------------------------
+for service in services:
+    test_in=root+f"/sample/{service['lang']}/Test1{service['ext']}"
+    test_out=root+f"/build/{service['lang']}/Test1{service['ext']}"
 
-vars = [x[1] for x in Variable.find_variables(content)]
-# print(vars)
+    # ----------------------------------------------------------------------------
 
-# ----------------------------------------------------------------------------
+    content=File.read(test_in)
 
-var_map=[Variable.generate_random_name(24) for _ in vars]
-# print(var_map) 
+    # ----------------------------------------------------------------------------
 
-# ----------------------------------------------------------------------------
-# Untrusted code; this is just for test
-for i in range(0,len(vars)):
-    content=content.replace(vars[i],var_map[i])
+    for action in service["actions"]:
+        content=action(content)
 
-# ----------------------------------------------------------------------------
-output=content+"\n/*\n * [HASH]\n"
-output+=" * "+Security.Hash.md5(content)+"\n"
-output+=" * "+Security.Hash.sha1(content)+"\n"
-output+=" * "+Security.Hash.sha256(content)+"\n"
-output+=" */"
+    # ----------------------------------------------------------------------------
 
-File.write(test_out,output)
-print(output)
+    # FIXME: x[1]!='' and not x[1].startsWith("__") is a temprory fix for python language; remove this for other languages
+    vars = [x[1] for x in service["engine"].find_variables(content) if x[1]!='' and not x[1].startswith("__")] 
+    print(vars)
+
+    # ----------------------------------------------------------------------------
+
+    var_map=[service["engine"].generate_random_name(12) for _ in vars]
+    print(var_map) 
+
+    # ----------------------------------------------------------------------------
+    # Untrusted code; this is just for test
+    for i in range(0,len(vars)):
+        content=content.replace(vars[i],var_map[i])
+
+    # ----------------------------------------------------------------------------for i in range(0,len(vars)):
+    #     content=content.replace(vars[i],var_map[i])
+        
+    # FIXME: this section is ended because its not going to work in python; fix it
+    output=content # FIXME: its just a temprory fix; remove this line later
+    # output=content+"\n/*\n * [HASH]\n"
+    # output+=" * "+Security.Hash.md5(content)+"\n"
+    # output+=" * "+Security.Hash.sha1(content)+"\n"
+    # output+=" * "+Security.Hash.sha256(content)+"\n"
+    # output+=" */"
+
+    File.write(test_out,output)
+    print(output)
