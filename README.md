@@ -1,3 +1,3 @@
 # OpenGaurd
 ## Links
-- [Wiki](/wiki)
+- [Wiki](https://github.com/sh-navid/OpenGaurd/wiki)
