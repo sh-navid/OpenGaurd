@@ -3,6 +3,8 @@ import random
 
 CHARS="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 
+# \S means any char except white-space
+
 class Variable: # Default is kotlin
     @staticmethod
     def find_variables(content):
@@ -17,7 +19,7 @@ class Variable: # Default is kotlin
 class KotlinVariable(Variable):
     pass
 
-class PythonVariable:
+class PythonVariable(Variable):
     @staticmethod
     def find_variables(content):
         return re.findall(r'([ ]+)(.*?)([ ]*=)([ ]*)(.*?)([ |\n|;|#]+)', content)
