@@ -39,5 +39,5 @@ class PythonComment(Comment):
                 comment
             '''
         """
-        content = re.sub(r'/""".*?"""\n', '\n', content,flags=re.DOTALL)
-        return    re.sub(r"/'''.*?'''\n", '\n', content,flags=re.DOTALL)
+        content = re.sub(r'""".*?"""', '', content,flags=re.DOTALL)
+        return    re.sub(r"'''.*?'''", '', content,flags=re.DOTALL)
