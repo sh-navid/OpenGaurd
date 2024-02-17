@@ -14,5 +14,18 @@ You can use this project to obfuscate a single language source code or an androi
 ## Roadmap
 - ![](_/c.png) Setup an interface to handle same process for different languages
 
+## Testcases
+|Lang      |Test1       |Test2       |
+|----------|------------|------------|
+|Kotlin    |![](_/c.png)|![](_/u.png)|
+|Python    |![](_/c.png)|![](_/u.png)|
+|JS        |![](_/u.png)|![](_/u.png)|
+|Java      |![](_/u.png)|![](_/u.png)|
+|C++       |![](_/u.png)|![](_/u.png)|
+
+|Framework |Test1       |
+|----------|------------|
+|Android   |![](_/u.png)|
+
 ## Contribution
 - **TODO**(`"Setup this section"`)
