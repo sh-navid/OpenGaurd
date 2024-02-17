@@ -1,13 +1,14 @@
 
 if __name__=="__main__":
+
     v1 = "our"
     v2 = "counter"
     print(f"This is {v1} "+v2)
-    _FWBM54KYQ1YJ=12
-    _FWBM54KYQ1YJ+=1
-    _HX2OWFFA6B2N=True
+    _1MR6BVCIWZBP=12
+    _1MR6BVCIWZBP+=1
+    _F41FSJFIVRPS=True
 
-    _HX2OWFFA6B2N=not _HX2OWFFA6B2N
+    _F41FSJFIVRPS=not _F41FSJFIVRPS
 
     for k in range(10,15):
-        print(f"\n{v1} {k} "+str(_FWBM54KYQ1YJ) + f"|{_HX2OWFFA6B2N}")
+        print(f"\n{v1} {k} "+str(_1MR6BVCIWZBP) + f"|{_F41FSJFIVRPS}")
