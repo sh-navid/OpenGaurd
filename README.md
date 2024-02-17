@@ -1,5 +1,5 @@
 # OpenGaurd
-Its an open **obfuscator** or extra layer of **Obfuscation** for different programming languages. You can use this service before your own obfuscation layer.
+Its an open **obfuscator** or an extra layer of **Obfuscation**.
 
 ## Links
 - [OpenGaurd Wiki](https://github.com/sh-navid/OpenGaurd/wiki)
