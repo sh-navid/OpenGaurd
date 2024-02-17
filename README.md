@@ -1,7 +1,5 @@
 # OpenGaurd
-Its an Open **obfuscate helper** for android projects that use Kotlin, Java, JS, Python and C++. For extra layer of obfuscation you can use this service before your own obfuscation process.
-
-You can use this project to obfuscate a single language source code or an android project.
+Its an open **obfuscator** or extra layer of **Obfuscation** for different programming languages. You can use this service before your own obfuscation layer.
 
 ## Links
 - [OpenGaurd Wiki](https://github.com/sh-navid/OpenGaurd/wiki)
@@ -27,6 +25,7 @@ You can use this project to obfuscate a single language source code or an androi
 |Framework |Test1       |
 |----------|------------|
 |Android   |![](_/u.png)|
+|?         |![](_/u.png)|
 
 ## Contribution
 - **TODO**(`"Setup this section"`)
