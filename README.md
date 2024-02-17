@@ -15,13 +15,14 @@ You can use this project to obfuscate a single language source code or an androi
 - ![](_/c.png) Setup an interface to handle same process for different languages
 
 ## Testcases
-|Lang      |Test1       |Test2       |
+|Lang      |Setup Test1 |Passed Test1|
 |----------|------------|------------|
-|Kotlin    |![](_/c.png)|![](_/u.png)|
-|Python    |![](_/c.png)|![](_/u.png)|
-|JS        |![](_/u.png)|![](_/u.png)|
-|Java      |![](_/u.png)|![](_/u.png)|
+|Kotlin    |![](_/c.png)|![](_/c.png)|
+|Python    |![](_/c.png)|![](_/c.png)|
+|JS        |![](_/c.png)|![](_/u.png)|
+|Java      |![](_/c.png)|![](_/u.png)|
 |C++       |![](_/u.png)|![](_/u.png)|
+|PHP       |![](_/u.png)|![](_/u.png)|
 
 |Framework |Test1       |
 |----------|------------|
