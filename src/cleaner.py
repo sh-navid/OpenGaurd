@@ -12,3 +12,7 @@ class KotlinCleaner(Cleaner):
 
 class PythonCleaner(Cleaner):
     pass
+
+
+class JsCleaner(Cleaner):
+    pass

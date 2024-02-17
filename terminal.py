@@ -1,8 +1,8 @@
 import sys
 from src.file import File
-from src.comment import KotlinComment,PythonComment
-from src.cleaner import KotlinCleaner,PythonCleaner
-from src.variable import KotlinVariable,PythonVariable
+from src.comment import KotlinComment,PythonComment,JsComment
+from src.cleaner import KotlinCleaner,PythonCleaner,JsCleaner
+from src.variable import KotlinVariable,PythonVariable,JsVariable
 from src.security import Security
 
 # ----------------------------------------------------------------------------
@@ -19,6 +19,11 @@ services=[
         PythonComment.remove_linear,
         PythonComment.remove_multiline,
         PythonCleaner.remove_emptylines,
+]},
+    {"ext":".js", "lang":"js", "engine":JsVariable, "actions":[
+        JsComment.remove_linear,
+        JsComment.remove_multiline,
+        JsCleaner.remove_emptylines,
     ]},
 ]
 

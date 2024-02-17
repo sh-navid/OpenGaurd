@@ -41,3 +41,7 @@ class PythonComment(Comment):
         """
         content = re.sub(r'""".*?"""', '', content,flags=re.DOTALL)
         return    re.sub(r"'''.*?'''", '', content,flags=re.DOTALL)
+    
+    
+class JsComment(Comment):
+    pass

@@ -23,3 +23,12 @@ class PythonVariable(Variable):
     @staticmethod
     def find_variables(content):
         return re.findall(r'([ ]+)(.*?)([ ]*=)([ ]*)(.*?)([ |\n|;|#]+)', content)
+    
+
+class JsVariable(Variable):
+    @staticmethod
+    def find_variables(content):
+        x= re.findall(r'(const[ ]+|var[ ]+|let[ ]+)(.*?)([ ]*=)([ ]*)(.*?)([ |\n|;|//|/*|=>]+)', content)
+        print("----")
+        print(x)
+        return x
